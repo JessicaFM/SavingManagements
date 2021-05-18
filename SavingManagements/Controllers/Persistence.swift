@@ -32,6 +32,5 @@ struct PersistenceController {
     
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "SavingManagements")
-        
     }
 }
