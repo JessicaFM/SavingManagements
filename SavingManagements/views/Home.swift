@@ -41,7 +41,6 @@ struct ContentView: View {
     @State private var searchText = ""
     @State private var isEditing = false
     @State var isNavigationBarHidden: Bool = true
-
     
     // Search action. Called when search key pressed on keyboard
     func search() {
