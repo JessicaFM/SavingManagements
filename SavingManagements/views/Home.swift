@@ -34,9 +34,9 @@ struct ContentView: View {
     }
     
     let restaurants = [
-            Restaurant(name: "Joe's Original"),
-            Restaurant(name: "The Real Joe's Original"),
-            Restaurant(name: "Original Joe's")
+        Restaurant(name: "Joe's Original", category: "cat", created: Date()),
+        Restaurant(name: "The Real Joe's Original", category: "cat", created: Date()),
+            Restaurant(name: "Original Joe's", category: "cat", created: Date())
         ]
     @State private var searchText = ""
     @State private var isEditing = false

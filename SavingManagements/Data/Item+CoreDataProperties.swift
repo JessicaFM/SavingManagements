@@ -18,7 +18,7 @@ extension Item {
 
     @NSManaged public var name: String?
     @NSManaged public var id: UUID?
-    @NSManaged public var category: Category
+    @NSManaged public var category: Category?
     @NSManaged public var created: Date?
 
 }

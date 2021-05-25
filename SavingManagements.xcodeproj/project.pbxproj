@@ -13,7 +13,6 @@
 		4C76EA4726373571001B8A45 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C76EA4626373571001B8A45 /* Home.swift */; };
 		4C76EA4926373571001B8A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C76EA4826373571001B8A45 /* Assets.xcassets */; };
 		4C76EA4C26373571001B8A45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C76EA4B26373571001B8A45 /* Preview Assets.xcassets */; };
-		4C76EA4E26373571001B8A45 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C76EA4D26373571001B8A45 /* Persistence.swift */; };
 		4C76EA5126373571001B8A45 /* SavingManagements.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C76EA4F26373571001B8A45 /* SavingManagements.xcdatamodeld */; };
 		4C76EA5C26373572001B8A45 /* SavingManagementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C76EA5B26373572001B8A45 /* SavingManagementsTests.swift */; };
 		4C76EA6726373572001B8A45 /* SavingManagementsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C76EA6626373572001B8A45 /* SavingManagementsUITests.swift */; };
@@ -52,7 +51,6 @@
 		4C76EA4626373571001B8A45 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		4C76EA4826373571001B8A45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C76EA4B26373571001B8A45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4C76EA4D26373571001B8A45 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4C76EA5026373571001B8A45 /* SavingManagements.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavingManagements.xcdatamodel; sourceTree = "<group>"; };
 		4C76EA5226373571001B8A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C76EA5726373572001B8A45 /* SavingManagementsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SavingManagementsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +129,6 @@
 				4C87C18426445B54003DC261 /* views */,
 				4C76EA4426373571001B8A45 /* SavingManagementsApp.swift */,
 				4C76EA4826373571001B8A45 /* Assets.xcassets */,
-				4C76EA4D26373571001B8A45 /* Persistence.swift */,
 				4C76EA5226373571001B8A45 /* Info.plist */,
 				4C76EA4F26373571001B8A45 /* SavingManagements.xcdatamodeld */,
 				4C76EA4A26373571001B8A45 /* Preview Content */,
@@ -344,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CEA35152652C9FD008789F7 /* Item+CoreDataProperties.swift in Sources */,
-				4C76EA4E26373571001B8A45 /* Persistence.swift in Sources */,
 				4C76EA4726373571001B8A45 /* Home.swift in Sources */,
 				4CEA35122652C9FD008789F7 /* Category+CoreDataClass.swift in Sources */,
 				4C76EA5126373571001B8A45 /* SavingManagements.xcdatamodeld in Sources */,
