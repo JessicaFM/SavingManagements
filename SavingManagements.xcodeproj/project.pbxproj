@@ -127,8 +127,8 @@
 				4C87C18D26458581003DC261 /* Extensions */,
 				4C87C18C2645857A003DC261 /* Helpers */,
 				4C87C18B26458572003DC261 /* Components */,
-				4C87C18826458342003DC261 /* common_views */,
-				4C87C18426445B54003DC261 /* views */,
+				4C87C18826458342003DC261 /* CommonViews */,
+				4C87C18426445B54003DC261 /* Views */,
 				4C76EA4426373571001B8A45 /* SavingManagementsApp.swift */,
 				4C76EA4826373571001B8A45 /* Assets.xcassets */,
 				4C76EA5226373571001B8A45 /* Info.plist */,
@@ -164,21 +164,21 @@
 			path = SavingManagementsUITests;
 			sourceTree = "<group>";
 		};
-		4C87C18426445B54003DC261 /* views */ = {
+		4C87C18426445B54003DC261 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				4C76EA4626373571001B8A45 /* Home.swift */,
 				4CC43EA92668214500505C5E /* AddView.swift */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		4C87C18826458342003DC261 /* common_views */ = {
+		4C87C18826458342003DC261 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
 				4C87C18E2645971D003DC261 /* NavigationConfigurator.swift */,
 			);
-			path = common_views;
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 		4C87C18B26458572003DC261 /* Components */ = {
