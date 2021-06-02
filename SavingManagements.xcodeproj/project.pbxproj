@@ -19,6 +19,7 @@
 		4C87C18A2645835C003DC261 /* NavigationBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C87C1892645835C003DC261 /* NavigationBarCustom.swift */; };
 		4C87C18F2645971D003DC261 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C87C18E2645971D003DC261 /* NavigationConfigurator.swift */; };
 		4C909303264BEFCF002D00A2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C909302264BEFCF002D00A2 /* SearchBar.swift */; };
+		4CC43EAA2668214500505C5E /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC43EA92668214500505C5E /* AddView.swift */; };
 		4CEA350D2652C4A2008789F7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA350C2652C4A2008789F7 /* Persistence.swift */; };
 		4CEA35122652C9FD008789F7 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA350E2652C9FD008789F7 /* Category+CoreDataClass.swift */; };
 		4CEA35132652C9FD008789F7 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA350F2652C9FD008789F7 /* Category+CoreDataProperties.swift */; };
@@ -62,6 +63,7 @@
 		4C87C1892645835C003DC261 /* NavigationBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCustom.swift; sourceTree = "<group>"; };
 		4C87C18E2645971D003DC261 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		4C909302264BEFCF002D00A2 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		4CC43EA92668214500505C5E /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		4CEA350C2652C4A2008789F7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4CEA350E2652C9FD008789F7 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "SavingManagements/Data/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4CEA350F2652C9FD008789F7 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "SavingManagements/Data/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4C76EA4626373571001B8A45 /* Home.swift */,
+				4CC43EA92668214500505C5E /* AddView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC43EAA2668214500505C5E /* AddView.swift in Sources */,
 				4CEA35152652C9FD008789F7 /* Item+CoreDataProperties.swift in Sources */,
 				4C76EA4726373571001B8A45 /* Home.swift in Sources */,
 				4CEA35122652C9FD008789F7 /* Category+CoreDataClass.swift in Sources */,

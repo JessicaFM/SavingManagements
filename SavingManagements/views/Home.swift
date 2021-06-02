@@ -8,7 +8,6 @@
 import SwiftUI
 import CoreData
 
-
 struct Restaurant: Identifiable {
     let id = UUID()
     let name: String
@@ -22,13 +21,20 @@ struct RestaurantRow: View {
     var body: some View {
         Text("Come and eat at \(restaurant.name)")
     }
-    
 }
 
 let coloredNavAppearance = UINavigationBarAppearance()
 
 struct ContentView: View {
     init() {
+        coloredNavAppearance.configureWithOpaqueBackground()
+        coloredNavAppearance.backgroundColor = .systemBlue
+        coloredNavAppearance.titleTextAttributes = [.foregroundColor: UIColor.red]
+        coloredNavAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.red]
+
+        UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+
         UITableView.appearance().tableFooterView = UIView()
         UITabBar.appearance().isTranslucent = false
     }
@@ -67,27 +73,22 @@ struct ContentView: View {
             }
             
             SearchBarNavigation(text: $searchText, search: search, cancel: cancel) {
-                    List(restaurants) { restaurant in
+                List(restaurants.filter{searchText.isEmpty || $0.name.localizedStandardContains(searchText)}) { restaurant in
                         RestaurantRow(restaurant: restaurant)
                             .listRowBackground(Color.pink)
                     }
                     .padding(.top, 10)
            }
             .padding(.top, -10)
-            .navigationTitle("TITLE")
+            .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        print("Item add button was tapped")
-                    }) {
-                        Image(systemName: "plus.app")
-                    }
+                    NavigationLink("Go to second view", destination: AddView())
                 }
             }
-            .navigationBarColor(UIColor.gray, textColor: UIColor.yellow)
+            .navigationBarColor(UIColor.darkGray, textColor: UIColor.white)
         }
-        
     }
 }
 

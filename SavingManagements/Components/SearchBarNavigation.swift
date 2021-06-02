@@ -53,6 +53,7 @@ struct SearchBarNavigation<Content: View>: UIViewControllerRepresentable  {
            }
            
            func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+                print(searchText)
                text = searchText
            }
            
