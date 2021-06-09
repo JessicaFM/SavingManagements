@@ -9,21 +9,66 @@ import SwiftUI
 import CoreData
 
 struct AddView: View {
+    var cardTitle: String
+    var cardCategory: String
+    var cardItems: [String] = []
+    @State private var showingSheet = false
+    
     init() {
-        UITableView.appearance().tableFooterView = UIView()
-        UITabBar.appearance().isTranslucent = false
+        // TODO
+        self.cardTitle = ""
+        self.cardCategory = ""
     }
     
     var body: some View {
-        NavigationView {
-            Text("Hello, World!")
+        HStack() {
+            VStack(alignment: .leading) {
+                VStack {
+                    Text("Title")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    TextField("Your title", text: .constant(""))
+                }
+                .padding(.bottom, 30)
+                VStack {
+                    Text("Categories")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    TextField("Placeholder", text: .constant(""))
+                }
+                .padding(.bottom, 30)
+                VStack {
+                    HStack {
+                        Text("Items")
+                        Button("Show Sheet") {
+                            showingSheet.toggle()
+                        }
+                        .sheet(isPresented: $showingSheet) {
+                            SheetView()
+                        }
+                        
+                    }
+                }
+                Spacer()
+            }
+            .padding(20)
+            Spacer()
         }
-        .padding(.top, -10)
-        .navigationTitle("Add")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarColor(UIColor.darkGray, textColor: UIColor.white)
     }
-    
+}
+
+struct SheetView: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        VStack {
+            Text("Adding item view")
+            Button("Press to dismiss") {
+                presentationMode.wrappedValue.dismiss()
+            }
+            .font(.title)
+            .padding()
+            .background(Color.black)
+        }
+    }
 }
 
 struct AddView_Previews: PreviewProvider {

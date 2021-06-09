@@ -28,9 +28,8 @@ let coloredNavAppearance = UINavigationBarAppearance()
 struct ContentView: View {
     init() {
         coloredNavAppearance.configureWithOpaqueBackground()
-        coloredNavAppearance.backgroundColor = .systemBlue
-        coloredNavAppearance.titleTextAttributes = [.foregroundColor: UIColor.red]
-        coloredNavAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.red]
+        coloredNavAppearance.titleTextAttributes = [.foregroundColor: UIColor(red: 232/255, green: 111/255, blue: 81/255, alpha: 1.0)]
+        coloredNavAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(red: 232/255, green: 111/255, blue: 81/255, alpha: 1.0)]
 
         UINavigationBar.appearance().standardAppearance = coloredNavAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
@@ -71,6 +70,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationBarColor(UIColor.systemBackground, textColor: UIColor(red: 232/255, green: 111/255, blue: 81/255, alpha: 1.0))
             
             SearchBarNavigation(text: $searchText, search: search, cancel: cancel) {
                 List(restaurants.filter{searchText.isEmpty || $0.name.localizedStandardContains(searchText)}) { restaurant in
@@ -84,14 +84,16 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    NavigationLink("Go to second view", destination: AddView())
+                    NavigationLink(destination: AddView()){
+                        Image(systemName: "plus.app")
+                    }
                 }
             }
-            .navigationBarColor(UIColor.darkGray, textColor: UIColor.white)
+            .accentColor(Color("Light Green"))
         }
     }
 }
-
+//red: 0xE7, green: 0x6F, blue: 0x51, alpha: 1.0)
 extension View {
   func navigationBarColor(_ backgroundColor: UIColor, textColor: UIColor) -> some View {
     self.modifier(NavigationConfigurator(backgroundColor: backgroundColor, textColor: textColor))
