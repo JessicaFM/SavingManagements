@@ -47,6 +47,14 @@ struct ContentView: View {
     @State private var isEditing = false
     @State var isNavigationBarHidden: Bool = true
     
+    @FetchRequest(
+        entity: Category.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Category.name, ascending: true),
+            NSSortDescriptor(keyPath: \Category.name, ascending: false)
+        ]
+    ) var categories: FetchedResults<Category>
+    
     // Search action. Called when search key pressed on keyboard
     func search() {
     }
@@ -57,9 +65,14 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List(restaurants) { restaurant in
-               RestaurantRow(restaurant: restaurant)
+            List {
+                ForEach(categories, id: \.id) { categoryItem in
+                    Text("Name = \(categoryItem.name ?? "")")
+                }
             }
+//            List(categories) { categoryItem in
+//                CategoryRow(categoryItem: categoryItem)
+//            }
             .navigationTitle("Categories")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -84,7 +97,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: AddView()){
+                    NavigationLink(destination: AddCard()){
                         Image(systemName: "plus.app")
                     }
                 }
@@ -102,6 +115,6 @@ extension View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
     }
 }
