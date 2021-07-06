@@ -1,19 +1,17 @@
 //
-//  AddView.swift
+//  AddItem.swift
 //  SavingManagements
 //
-//  Created by Jessica F on 2/6/21.
+//  Created by Jessica F on 27/6/21.
 //
 
 import SwiftUI
-import CoreData
 
-struct AddCard: View {
+struct AddItem: View {
     var cardTitle: String
     var cardCategory: String
-    var cardItems: [String] = []
     @State private var showingSheet = false
-    let items: [Item] = []
+//    var items: [CardItem]
     @State private var showingAddItem = false
     
     init() {
@@ -53,8 +51,8 @@ struct AddCard: View {
                 }
                 Spacer()
                 VStack {
-//                    List(items) {
-//
+//                    List(items, id: \.self) { item in
+//                        Text("\(item)")
 //                    }
                 }
             }
@@ -64,9 +62,8 @@ struct AddCard: View {
     }
 }
 
-struct AddView_Previews: PreviewProvider {
+struct AddItem_Previews: PreviewProvider {
     static var previews: some View {
-		        AddCard()
+        AddItem()
     }
 }
-

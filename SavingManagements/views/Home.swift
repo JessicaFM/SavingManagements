@@ -15,14 +15,6 @@ struct Restaurant: Identifiable {
     let created: Date
 }
 
-struct RestaurantRow: View {
-    var restaurant: Restaurant
-
-    var body: some View {
-        Text("Come and eat at \(restaurant.name)")
-    }
-}
-
 let coloredNavAppearance = UINavigationBarAppearance()
 
 struct ContentView: View {
@@ -38,22 +30,18 @@ struct ContentView: View {
         UITabBar.appearance().isTranslucent = false
     }
     
-    let restaurants = [
-        Restaurant(name: "Joe's Original", category: "cat", created: Date()),
-        Restaurant(name: "The Real Joe's Original", category: "cat", created: Date()),
-            Restaurant(name: "Original Joe's", category: "cat", created: Date())
-        ]
     @State private var searchText = ""
     @State private var isEditing = false
     @State var isNavigationBarHidden: Bool = true
     
     @FetchRequest(
-        entity: Category.entity(),
+        entity: Card.entity(),
         sortDescriptors: [
-            NSSortDescriptor(keyPath: \Category.name, ascending: true),
-            NSSortDescriptor(keyPath: \Category.name, ascending: false)
+            NSSortDescriptor(keyPath: \Card.name, ascending: true),
+            NSSortDescriptor(keyPath: \Card.name, ascending: false)
         ]
-    ) var categories: FetchedResults<Category>
+    ) var cards: FetchedResults<Card>
+    
     
     // Search action. Called when search key pressed on keyboard
     func search() {
@@ -65,44 +53,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(categories, id: \.id) { categoryItem in
-                    Text("Name = \(categoryItem.name ?? "")")
-                }
-            }
-//            List(categories) { categoryItem in
-//                CategoryRow(categoryItem: categoryItem)
-//            }
-            .navigationTitle("Categories")
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        print("Category add button was tapped")
-                    }) {
-                        Image(systemName: "plus.app")
-                    }
-                }
-            }
-            .navigationBarColor(UIColor.systemBackground, textColor: UIColor(red: 232/255, green: 111/255, blue: 81/255, alpha: 1.0))
-            
-            SearchBarNavigation(text: $searchText, search: search, cancel: cancel) {
-                List(restaurants.filter{searchText.isEmpty || $0.name.localizedStandardContains(searchText)}) { restaurant in
-                        RestaurantRow(restaurant: restaurant)
-                            .listRowBackground(Color.pink)
-                    }
-                    .padding(.top, 10)
-           }
-            .padding(.top, -10)
-            .navigationTitle("Home")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: AddCard()){
-                        Image(systemName: "plus.app")
-                    }
-                }
-            }
-            .accentColor(Color("Light Green"))
+
         }
     }
 }

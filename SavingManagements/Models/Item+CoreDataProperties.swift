@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  SavingManagements
 //
-//  Created by Jessica F on 17/5/21.
+//  Created by Jessica F on 6/7/21.
 //
 //
 
@@ -16,10 +16,12 @@ extension Item {
         return NSFetchRequest<Item>(entityName: "Item")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var id: UUID?
-    @NSManaged public var category: Category?
     @NSManaged public var created: Date?
+    @NSManaged public var id: UUID?
+    @NSManaged public var name: String?
+    @NSManaged public var sign: Int16
+    @NSManaged public var value: Double
+    @NSManaged public var card: Card?
 
 }
 
